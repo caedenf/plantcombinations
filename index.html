@@ -14,13 +14,16 @@
     </div>
   
    <div class="plantContainer" style="margin: 20px;">
+      <select id="sel1" onchange="show(this)">
+        <option value="">-- Select Plant 1--</option>
+    </select>
     <div id="plants">
     </div>
    </div>
    
    <br><br>
 
-<p>VERSION 0.0.1</p>
+<p>VERSION 0.0.2</p>
  <script>
    fetch("data.json")
                 .then(function (response) {
@@ -35,10 +38,12 @@
             
             function showData(data) {
              var plantDiv = document.getElementById("plants");
-
+            
+              var ele = document.getElementById('sel1');
                 for (var i = 0; i < data.length-1; i++)
                 {
-                  plantDiv.innerHTML = plantDiv.innerHTML + data[i].plant + "<br>";
+                 ele.innerHTML = ele.innerHTML + '<option value="' + data[i].plant + '">' + data[i].plant + '</option>';
+                  //plantDiv.innerHTML = plantDiv.innerHTML + data[i].plant + "<br>";
                 }
             }
  </script>
