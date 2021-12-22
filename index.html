@@ -27,7 +27,7 @@
    
    <br><br>
 
-<p>VERSION 0.1.5</p>
+<p>VERSION 0.1.6</p>
  <script>
   
    fetch("data.json")
@@ -44,7 +44,7 @@
             
           function process(data); {
               showData(data);
-              calculate(data);
+              //calculate(data);
           }
   
             function showData(data) {
@@ -58,7 +58,6 @@
                  ele2.innerHTML = ele2.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
               
                 }
-             plantData = data;
             }
              
              function calculate() {
