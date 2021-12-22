@@ -27,7 +27,7 @@
    
    <br><br>
 
-<p>VERSION 0.2.5</p>
+<p>VERSION 0.2.6</p>
  <script>
    fetch("data.json")
                 .then(function (response) {
@@ -68,6 +68,7 @@
                 });
            
               function processData(data) {
+               var plantDiv = document.getElementById("plants");
                plantDiv.innerHTML = "";
              var excellentMatches = [];
             var goodMatches = [];
@@ -141,7 +142,7 @@
               neutralMatches = neutralMatches.filter(x => goodMatches.indexOf(x) == -1);
               neutralMatches = neutralMatches.filter(x => fineMatches.indexOf(x) == -1);
 
-           var plantDiv = document.getElementById("plants");
+           //var plantDiv = document.getElementById("plants");
            plantDiv.innerHTML = plantDiv.innerHTML + "Excellent Matches<br>";
            for (var i = 0; i < excellentMatches.length; i++)
                 {
