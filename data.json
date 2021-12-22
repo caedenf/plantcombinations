@@ -24,6 +24,30 @@
     "bad": ["peppers", "squash", "strawberries", "tomatoes"]
   },
   {
+    "plant": "carrots",
+    "excellent": [],
+    "good": ["beans", "broccoli", "cauliflower", "chives", "leeks", "lettuce", "onion", "parsley", "peas", "peppers", "rosemary", "sage"],
+    "fine": ["thyme"],
+    "neutral": ["basil", "cilantro", "corn", "cucumbers", "garlic", "marigold", "melon", "nasturtium", "oregano", "spinach", "squash", "strawberries", "sunflowers", "swiss chard"],
+    "bad": ["dill", "tomatoes"]
+  },
+  {
+    "plant": "cauliflower",
+    "excellent": ["oregano"],
+    "good": ["beans", "carrots", "chives", "cucumbers", "dill", "garlic", "lettuce", "nasturtium", "onion", "rosemary", "sage", "spinach", "swiss chard", "thyme"],
+    "fine": [],
+    "neutral": ["basil", "broccoli", "cilantro", "corn", "leeks", "marigold", "melon", "parsley", "peas", "sunflowers"],
+    "bad": ["peppers", "squash", "strawberries", "tomatoes"]
+  },
+  {
+    "plant": "chives",
+    "excellent": [],
+    "good": ["broccoli", "carrots", "cauliflower", "parsley", "tomatoes"],
+    "fine": ["sage", "thyme"],
+    "neutral": ["basil", "cilantro", "corn", "cucumber", "dill", "garlic", "leeks", "lettuce", "marigold", "melon", "nasturtium", "onion", "oregano", "peppers", "rosemary", "spinach", "squash", "strawberries", "sunflowers", "swiss chard"],
+    "bad": ["beans", "peas"]
+  },
+  {
     "plant": "",
     "excellent": [],
     "good": [],
