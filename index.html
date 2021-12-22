@@ -28,7 +28,7 @@
    
    <br><br>
 
-<p>VERSION 0.0.5</p>
+<p>VERSION 0.0.6</p>
  <script>
    fetch("data.json")
                 .then(function (response) {
@@ -52,9 +52,9 @@
                  ele2.innerHTML = ele2.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
               
                 }
-            }
-  
-           function calculate(data) {
+             
+             
+             function calculate() {
              var excellentMatches = [];
             var goodMatches = [];
             var fineMatches = [];
@@ -120,6 +120,9 @@
                     plantDiv.innerHTML = plantDiv.innerHTML + excellentMatches[i] + "<br>";
                 }
              }
+            }
+  
+           
  </script>
 </body>
 </html> 
