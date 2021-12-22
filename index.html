@@ -29,7 +29,6 @@
 
 <p>VERSION 0.1.3</p>
  <script>
-  var plantData = [];
   
    fetch("data.json")
                 .then(function (response) {
@@ -37,6 +36,7 @@
                 })
                 .then(function (data) {
                     showData(data);
+                    calculate(data);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -68,17 +68,17 @@
             var plant1Index = ele1.value;
             var plant2Index = ele2.value;
      
-            excellentMatches = excellentMatches.concat(plantData[plant1Index].excellent);
-            goodMatches = goodMatches.concat(plantData[plant1Index].good);
-            fineMatches = fineMatches.concat(plantData[plant1Index].fine);
-            neutralMatches = neutralMatches.concat(plantData[plant1Index].neutral);
-            badMatches = badMatches.concat(plantData[plant1Index].bad);
-            excellentMatches = excellentMatches.concat(plantData[plant2Index].excellent);
-            goodMatches = goodMatches.concat(plantData[plant2Index].good);
-            fineMatches = fineMatches.concat(plantData[plant2Index].fine);
-            neutralMatches = neutralMatches.concat(plantData[plant2Index].neutral);
-            badMatches = badMatches.concat(plantData[plant2Index].bad);
-             /*
+            excellentMatches = excellentMatches.concat(data[plant1Index].excellent);
+            goodMatches = goodMatches.concat(data[plant1Index].good);
+            fineMatches = fineMatches.concat(data[plant1Index].fine);
+            neutralMatches = neutralMatches.concat(data[plant1Index].neutral);
+            badMatches = badMatches.concat(data[plant1Index].bad);
+            excellentMatches = excellentMatches.concat(data[plant2Index].excellent);
+            goodMatches = goodMatches.concat(data[plant2Index].good);
+            fineMatches = fineMatches.concat(data[plant2Index].fine);
+            neutralMatches = neutralMatches.concat(data[plant2Index].neutral);
+            badMatches = badMatches.concat(data[plant2Index].bad);
+             }/*
             let tempEMatches = [];
               excellentMatches.forEach((m) => {
                 if (!tempEMatches.includes(m)) {
@@ -149,8 +149,8 @@
              for (var i = 0; i < neutralMatches.length; i++)
                 {
                     plantDiv.innerHTML = plantDiv.innerHTML + neutralMatches[i] + "<br><br>";
-                }*/
-             }
+                }
+             }*/
             
   
            
