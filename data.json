@@ -96,6 +96,14 @@
     "bad": ["beans", "peas"]
   },
   {
+    "plant": "lettuce",
+    "excellent": [],
+    "good": ["broccoli", "carrots", "cauliflower", "cucumbers", "dill", "garlic", "onion", "spinach", "squash", "strawberries", "tomatoes"],
+    "fine": ["sage", "thyme"],
+    "neutral": ["basil", "beans", "chives", "cilantro", "corn", "leeks", "marigold", "melon", "nasturtium", "oregano", "parsley", "peas", "peppers", "rosemary", "sunflowers", "swiss chard"],
+    "bad": []
+  },
+  {
     "plant": "",
     "excellent": [],
     "good": [],
