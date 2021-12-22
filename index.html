@@ -27,7 +27,7 @@
    
    <br><br>
 
-<p>VERSION 0.1.8</p>
+<p>VERSION 0.1.9</p>
  <script>
    fetch("data.json")
                 .then(function (response) {
@@ -46,7 +46,7 @@
             
               var ele1 = document.getElementById('sel1');
              var ele2 = document.getElementById('sel2');
-                for (var i = 0; i < plantData.length-1; i++)
+                for (var i = 0; i < data.length-1; i++)
                 {
                  ele1.innerHTML = ele1.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
                  ele2.innerHTML = ele2.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
