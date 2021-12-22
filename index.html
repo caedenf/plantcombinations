@@ -27,43 +27,47 @@
    
    <br><br>
 
-<p>VERSION 0.1.7</p>
+<p>VERSION 0.1.8</p>
  <script>
-  
-  var plantData = [];
-  
    fetch("data.json")
                 .then(function (response) {
                     return response.json();
                 })
                 .then(function (data) {
-                    process(data);
+                    showData(data);
                    
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
-            
-          function process(data); {
-              plantData = data;
-              showData(plantData);
-              //calculate(plantData);
-          }
   
-            function showData(plantData) {
+            function showData(data) {
              var plantDiv = document.getElementById("plants");
             
               var ele1 = document.getElementById('sel1');
              var ele2 = document.getElementById('sel2');
                 for (var i = 0; i < plantData.length-1; i++)
                 {
-                 ele1.innerHTML = ele1.innerHTML + '<option value="' + i + '">' + plantData[i].plant + '</option>';
-                 ele2.innerHTML = ele2.innerHTML + '<option value="' + i + '">' + plantData[i].plant + '</option>';
+                 ele1.innerHTML = ele1.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
+                 ele2.innerHTML = ele2.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
               
                 }
             }
              
-             function calculate(plantData) {
+             function calculate() {
+                    fetch("data.json")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    processData(data);
+                   
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+           
+              function processData(data) {
              var excellentMatches = [];
             var goodMatches = [];
             var fineMatches = [];
@@ -85,7 +89,8 @@
             fineMatches = fineMatches.concat(data[plant2Index].fine);
             neutralMatches = neutralMatches.concat(data[plant2Index].neutral);
             badMatches = badMatches.concat(data[plant2Index].bad);
-             }/*
+              }
+            }/*
             let tempEMatches = [];
               excellentMatches.forEach((m) => {
                 if (!tempEMatches.includes(m)) {
