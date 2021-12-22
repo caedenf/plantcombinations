@@ -120,6 +120,14 @@
     "bad": []
   },
   {
+    "plant": "nasturtium",
+    "excellent": ["squash"],
+    "good": ["broccoli", "cauliflower", "cucumbers", "melon", "tomatoes"],
+    "fine": ["sage", "thyme"],
+    "neutral": ["basil", "beans", "carrots", "chives", "cilantro", "corn", "dill", "garlic", "leeks", "lettuce", "marigold", "onion", "oregano", "parsley", "peas", "peppers", "rosemary", "spinach", "strawberries", "sunflowers", "swiss chard"],
+    "bad": []
+  },
+  {
     "plant": "",
     "excellent": [],
     "good": [],
