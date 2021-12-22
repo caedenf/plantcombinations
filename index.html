@@ -14,10 +14,10 @@
     </div>
   
    <div class="plantContainer" style="margin: 20px;">
-      <select id="sel1" onchange="show(this)">
+      <select id="sel1">
         <option value="">-- Select Plant 1--</option>
     </select>
-    <select id="sel2" onchange="show(this)">
+    <select id="sel2">
         <option value="">-- Select Plant 2--</option>
     </select>
     <br>
@@ -28,7 +28,7 @@
    
    <br><br>
 
-<p>VERSION 0.0.3</p>
+<p>VERSION 0.0.5</p>
  <script>
    fetch("data.json")
                 .then(function (response) {
@@ -48,15 +48,78 @@
              var ele2 = document.getElementById('sel2');
                 for (var i = 0; i < data.length-1; i++)
                 {
-                 ele1.innerHTML = ele1.innerHTML + '<option value="' + data[i].plant + '">' + data[i].plant + '</option>';
-                 ele2.innerHTML = ele2.innerHTML + '<option value="' + data[i].plant + '">' + data[i].plant + '</option>';
-                  //plantDiv.innerHTML = plantDiv.innerHTML + data[i].plant + "<br>";
+                 ele1.innerHTML = ele1.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
+                 ele2.innerHTML = ele2.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
+              
                 }
             }
   
            function calculate(data) {
-             console.log("hi");
-           }
+             var excellentMatches = [];
+            var goodMatches = [];
+            var fineMatches = [];
+            var neutralMatches = [];
+            var badMatches = [];
+            
+            var ele1 = document.getElementById('sel1');
+             var ele2 = document.getElementById('sel2');
+            var plant1Index = ele1.value;
+            var plant2Index = ele2.value;
+            
+            excellentMatches = excellentMatches.concat(data[plant1Index].excellent);
+            goodMatches = goodMatches.concat(data[plant1Index].good);
+            fineMatches = fineMatches.concat(data[plant1Index].fine);
+            neutralMatches = neutralMatches.concat(data[plant1Index].neutral);
+            badMatches = badMatches.concat(data[plant1Index].bad);
+            excellentMatches = excellentMatches.concat(data[plant2Index].excellent);
+            goodMatches = goodMatches.concat(data[plant2Index].good);
+            fineMatches = fineMatches.concat(data[plant2Index].fine);
+            neutralMatches = neutralMatches.concat(data[plant2Index].neutral);
+            badMatches = badMatches.concat(data[plant2Index].bad);
+            
+            let tempEMatches = [];
+              excellentMatches.forEach((m) => {
+                if (!tempEMatches.includes(m)) {
+                  tempEMatches.push(m);
+                }
+              });
+           excellentMatches = tempEMatches;
+          let tempGMatches = [];
+              goodMatches.forEach((m) => {
+                if (!tempGMatches.includes(m)) {
+                  tempGMatches.push(m);
+                }
+              });
+           goodMatches = tempGMatches;
+          let tempFMatches = [];
+              fineMatches.forEach((m) => {
+                if (!tempFMatches.includes(m)) {
+                  tempFMatches.push(m);
+                }
+              });
+           fineMatches = tempFMatches;
+           let tempNMatches = [];
+              neutralMatches.forEach((m) => {
+                if (!tempNMatches.includes(m)) {
+                  tempNMatches.push(m);
+                }
+              });
+           neutralMatches = tempNMatches;
+          let tempBMatches = [];
+              badMatches.forEach((m) => {
+                if (!tempBMatches.includes(m)) {
+                  tempBMatches.push(m);
+                }
+              });
+           badMatches = tempBMatches;
+  
+           var plantDiv = document.getElementById("plants");
+           plantDiv.innerHTML = plantDiv.innerHTML + "Excellent Matches<br>";
+           for (var i = 0; i < excellentMatches.length; i++)
+                {
+                    plantDiv.innerHTML = plantDiv.innerHTML + excellentMatches[i] + "<br>";
+                }
+             }
  </script>
 </body>
 </html> 
