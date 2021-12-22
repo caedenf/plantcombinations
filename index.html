@@ -27,8 +27,10 @@
    
    <br><br>
 
-<p>VERSION 0.1.6</p>
+<p>VERSION 0.1.7</p>
  <script>
+  
+  var plantData = [];
   
    fetch("data.json")
                 .then(function (response) {
@@ -43,24 +45,25 @@
                 });
             
           function process(data); {
-              showData(data);
-              //calculate(data);
+              plantData = data;
+              showData(plantData);
+              //calculate(plantData);
           }
   
-            function showData(data) {
+            function showData(plantData) {
              var plantDiv = document.getElementById("plants");
             
               var ele1 = document.getElementById('sel1');
              var ele2 = document.getElementById('sel2');
-                for (var i = 0; i < data.length-1; i++)
+                for (var i = 0; i < plantData.length-1; i++)
                 {
-                 ele1.innerHTML = ele1.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
-                 ele2.innerHTML = ele2.innerHTML + '<option value="' + i + '">' + data[i].plant + '</option>';
+                 ele1.innerHTML = ele1.innerHTML + '<option value="' + i + '">' + plantData[i].plant + '</option>';
+                 ele2.innerHTML = ele2.innerHTML + '<option value="' + i + '">' + plantData[i].plant + '</option>';
               
                 }
             }
              
-             function calculate() {
+             function calculate(plantData) {
              var excellentMatches = [];
             var goodMatches = [];
             var fineMatches = [];
