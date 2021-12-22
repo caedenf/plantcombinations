@@ -27,7 +27,7 @@
    
    <br><br>
 
-<p>VERSION 0.2.4</p>
+<p>VERSION 0.2.5</p>
  <script>
    fetch("data.json")
                 .then(function (response) {
@@ -68,6 +68,7 @@
                 });
            
               function processData(data) {
+               plantDiv.innerHTML = "";
              var excellentMatches = [];
             var goodMatches = [];
             var fineMatches = [];
