@@ -17,13 +17,18 @@
       <select id="sel1" onchange="show(this)">
         <option value="">-- Select Plant 1--</option>
     </select>
+    <select id="sel2" onchange="show(this)">
+        <option value="">-- Select Plant 2--</option>
+    </select>
+    <br>
+    <input id = "plantButton" type = "button" value = "Calculate!" onclick = "calculate();" />
     <div id="plants">
     </div>
    </div>
    
    <br><br>
 
-<p>VERSION 0.0.2</p>
+<p>VERSION 0.0.3</p>
  <script>
    fetch("data.json")
                 .then(function (response) {
@@ -39,13 +44,19 @@
             function showData(data) {
              var plantDiv = document.getElementById("plants");
             
-              var ele = document.getElementById('sel1');
+              var ele1 = document.getElementById('sel1');
+             var ele2 = document.getElementById('sel2');
                 for (var i = 0; i < data.length-1; i++)
                 {
-                 ele.innerHTML = ele.innerHTML + '<option value="' + data[i].plant + '">' + data[i].plant + '</option>';
+                 ele1.innerHTML = ele1.innerHTML + '<option value="' + data[i].plant + '">' + data[i].plant + '</option>';
+                 ele2.innerHTML = ele2.innerHTML + '<option value="' + data[i].plant + '">' + data[i].plant + '</option>';
                   //plantDiv.innerHTML = plantDiv.innerHTML + data[i].plant + "<br>";
                 }
             }
+  
+           function calculate(data) {
+             console.log("hi");
+           }
  </script>
 </body>
 </html> 
