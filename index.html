@@ -20,15 +20,14 @@
     <select id="sel2">
         <option value="">-- Select Plant 2--</option>
     </select>
-    <br>
-    <input id = "plantButton" type = "button" value = "Calculate!" onclick = "calculate();" />
+    <input id = "plantButton" type = "button" value = "Calculate!" onclick = "calculate();" /><br><br>
     <div id="plants">
     </div>
    </div>
    
    <br><br>
 
-<p>VERSION 0.0.8</p>
+<p>VERSION 0.1.0</p>
  <script>
   var plantData = [];
   
@@ -114,13 +113,45 @@
                   tempBMatches.push(m);
                 }
               });
-           badMatches = tempBMatches;
-  
+           badMatches = tempBMatches;  
+              
+           excellentMatches = excellentMatches.filter(x => badMatches.indexOf(x) == -1);
+           goodMatches = goodMatches.filter(x => badMatches.indexOf(x) == -1);
+              fineMatches = fineMatches.filter(x => badMatches.indexOf(x) == -1);
+              neutralMatches = neutralMatches.filter(x => badMatches.indexOf(x) == -1);
+              
+              goodMatches = goodMatches.filter(x => excellentMatches.indexOf(x) == -1);
+              
+              fineMatches = fineMatches.filter(x => excellentMatches.indexOf(x) == -1);
+              fineMatches = fineMatches.filter(x => goodMatches.indexOf(x) == -1);
+              
+              neutralMatches = neutralMatches.filter(x => excellentMatches.indexOf(x) == -1);
+              neutralMatches = neutralMatches.filter(x => goodMatches.indexOf(x) == -1);
+              neutralMatches = neutralMatches.filter(x => fineMatches.indexOf(x) == -1);
+
            var plantDiv = document.getElementById("plants");
            plantDiv.innerHTML = plantDiv.innerHTML + "Excellent Matches<br>";
            for (var i = 0; i < excellentMatches.length; i++)
                 {
-                    plantDiv.innerHTML = plantDiv.innerHTML + excellentMatches[i] + "<br>";
+                    plantDiv.innerHTML = plantDiv.innerHTML + excellentMatches[i] + "<br><br>";
+                }
+             }
+           plantDiv.innerHTML = plantDiv.innerHTML + "Good Matches<br>";
+           for (var i = 0; i < goodMatches.length; i++)
+                {
+                    plantDiv.innerHTML = plantDiv.innerHTML + goodMatches[i] + "<br><br>";
+                }
+             }
+             plantDiv.innerHTML = plantDiv.innerHTML + "Fine Matches<br>";
+             for (var i = 0; i < fineMatches.length; i++)
+                {
+                    plantDiv.innerHTML = plantDiv.innerHTML + fineMatches[i] + "<br><br>";
+                }
+             }
+             plantDiv.innerHTML = plantDiv.innerHTML + "Neutral Matches<br>";
+             for (var i = 0; i < neutralMatches.length; i++)
+                {
+                    plantDiv.innerHTML = plantDiv.innerHTML + neutralMatches[i] + "<br><br>";
                 }
              }
             
