@@ -27,7 +27,7 @@
    
    <br><br>
 
-<p>VERSION 0.1.4</p>
+<p>VERSION 0.1.5</p>
  <script>
   
    fetch("data.json")
@@ -35,13 +35,18 @@
                     return response.json();
                 })
                 .then(function (data) {
-                    showData(data);
-                    calculate(data);
+                    process(data);
+                   
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
             
+          function process(data); {
+              showData(data);
+              calculate(data);
+          }
+  
             function showData(data) {
              var plantDiv = document.getElementById("plants");
             
