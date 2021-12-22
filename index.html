@@ -27,7 +27,7 @@
    
    <br><br>
 
-<p>VERSION 0.2.3</p>
+<p>VERSION 0.2.4</p>
  <script>
    fetch("data.json")
                 .then(function (response) {
@@ -144,22 +144,22 @@
            plantDiv.innerHTML = plantDiv.innerHTML + "Excellent Matches<br>";
            for (var i = 0; i < excellentMatches.length; i++)
                 {
-                    plantDiv.innerHTML = plantDiv.innerHTML + excellentMatches[i] + "<br><br>";
+                    plantDiv.innerHTML = plantDiv.innerHTML + excellentMatches[i] + "<br>";
                 }
-           plantDiv.innerHTML = plantDiv.innerHTML + "Good Matches<br>";
+           plantDiv.innerHTML = plantDiv.innerHTML + "<br>Good Matches<br>";
            for (var i = 0; i < goodMatches.length; i++)
                 {
-                    plantDiv.innerHTML = plantDiv.innerHTML + goodMatches[i] + "<br><br>";
+                    plantDiv.innerHTML = plantDiv.innerHTML + goodMatches[i] + "<br>";
                 }
-             plantDiv.innerHTML = plantDiv.innerHTML + "Fine Matches<br>";
+             plantDiv.innerHTML = plantDiv.innerHTML + "<br>Fine Matches<br>";
              for (var i = 0; i < fineMatches.length; i++)
                 {
-                    plantDiv.innerHTML = plantDiv.innerHTML + fineMatches[i] + "<br><br>";
+                    plantDiv.innerHTML = plantDiv.innerHTML + fineMatches[i] + "<br>";
                 }
-             plantDiv.innerHTML = plantDiv.innerHTML + "Neutral Matches<br>";
+             plantDiv.innerHTML = plantDiv.innerHTML + "<br>Neutral Matches<br>";
              for (var i = 0; i < neutralMatches.length; i++)
                 {
-                    plantDiv.innerHTML = plantDiv.innerHTML + neutralMatches[i] + "<br><br>";
+                    plantDiv.innerHTML = plantDiv.innerHTML + neutralMatches[i] + "<br>";
                 }
              }
          }
